@@ -1,4 +1,3 @@
-
 package vieww;
 
 import java.util.List;
@@ -25,54 +24,70 @@ public class Listagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pane1 = new javax.swing.JScrollPane();
-        tabela = new javax.swing.JTable();
+        bTnATUALIZAR = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        TabelaScroll = new javax.swing.JScrollPane();
+        tabelaa = new javax.swing.JTable();
+        bTnNOVO = new javax.swing.JButton();
+        bTnEXCLUIR = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        PesquisarCampo = new javax.swing.JTextField();
+        bTnBUSCAR = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        pane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        tabela.setModel(montarTabela());
-        tabela.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tabelaAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+        bTnATUALIZAR.setText("Atualizar");
+        bTnATUALIZAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTnATUALIZARActionPerformed(evt);
             }
         });
-        pane1.setViewportView(tabela);
 
-        jButton1.setText("+Novo Filme");
+        jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Excluir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        TabelaScroll.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        tabelaa.setModel(montarTabela());
+        tabelaa.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tabelaaAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        TabelaScroll.setViewportView(tabelaa);
+
+        bTnNOVO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bTnNOVO.setForeground(new java.awt.Color(0, 204, 0));
+        bTnNOVO.setText("+Novo ");
+        bTnNOVO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bTnNOVOActionPerformed(evt);
             }
         });
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bTnEXCLUIR.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        bTnEXCLUIR.setForeground(new java.awt.Color(255, 51, 51));
+        bTnEXCLUIR.setText("Excluir");
+        bTnEXCLUIR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bTnEXCLUIRActionPerformed(evt);
             }
         });
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Listagem");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -92,6 +107,22 @@ public class Listagem extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setText("Lista de Cadastro dos produtos");
+
+        PesquisarCampo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PesquisarCampoActionPerformed(evt);
+            }
+        });
+
+        bTnBUSCAR.setText("Buscar");
+        bTnBUSCAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTnBUSCARActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,60 +130,93 @@ public class Listagem extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pane1, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bTnNOVO)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bTnEXCLUIR)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bTnBUSCAR)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PesquisarCampo))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(0, 1, Short.MAX_VALUE)
+                                        .addComponent(TabelaScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(PesquisarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bTnBUSCAR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TabelaScroll, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bTnEXCLUIR, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bTnNOVO))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bTnNOVOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTnNOVOActionPerformed
         cadastroVIEW pl = new cadastroVIEW();
         pl.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bTnNOVOActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bTnEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTnEXCLUIRActionPerformed
         int id = getPosicao();
 
         int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir esse registro? ");
         if (resposta == 0) {
             ProdutoDAO.excluir(id);
         }
-
         //Para reexibir e atualizar a tabela na mesma tela
-        tabela.setModel(montarTabela());
-        pane1.setViewportView(tabela);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        tabelaa.setModel(montarTabela());
+        TabelaScroll.setViewportView(tabelaa);
+    }//GEN-LAST:event_bTnEXCLUIRActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void bTnATUALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTnATUALIZARActionPerformed
+        cadastroVIEW pl = new cadastroVIEW();
+        pl.setVisible(true);
+    }//GEN-LAST:event_bTnATUALIZARActionPerformed
 
-    private void tabelaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabelaAncestorAdded
+    private void tabelaaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabelaaAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tabelaAncestorAdded
+    }//GEN-LAST:event_tabelaaAncestorAdded
+
+    private void PesquisarCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisarCampoActionPerformed
+
+    }//GEN-LAST:event_PesquisarCampoActionPerformed
+
+    private void bTnBUSCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTnBUSCARActionPerformed
+
+    }//GEN-LAST:event_bTnBUSCARActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +255,7 @@ public class Listagem extends javax.swing.JFrame {
     }
 
     private DefaultTableModel montarTabela() {
-        String[] colunas = {"id", "Nome", "Data", "Categoria"};
+        String[] colunas = {"id", "Nome", "Data", "Situação"};
 
         // Criamos a tabela
         DefaultTableModel tabela = new DefaultTableModel(colunas, 0);
@@ -218,20 +282,26 @@ public class Listagem extends javax.swing.JFrame {
     }
 
     private int getPosicao() {
-        int posicao = tabela.getSelectedRow();
+        int posicao = tabelaa.getSelectedRow();
         if (posicao <= -1) {
             JOptionPane.showMessageDialog(null, "Selecione um item para excluir.");
         }
-        return Integer.parseInt((String) tabela.getValueAt(posicao, 0));
+        return Integer.parseInt((String) tabelaa.getValueAt(posicao, 0));
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField PesquisarCampo;
+    private javax.swing.JScrollPane TabelaScroll;
+    private javax.swing.JButton bTnATUALIZAR;
+    private javax.swing.JButton bTnBUSCAR;
+    private javax.swing.JButton bTnEXCLUIR;
+    private javax.swing.JButton bTnNOVO;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane pane1;
-    private javax.swing.JTable tabela;
+    private javax.swing.JTable tabelaa;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,7 +2,6 @@ package casadeleiloes.main;
 
 import java.sql.SQLException;
 import vieww.Listagem;
-import vieww.cadastroVIEW;
 
 public class JDBCleiloes {
 

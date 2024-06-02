@@ -14,7 +14,7 @@ public class ProdutoDAO {
             ConexaoJDBC conexao = new ConexaoJDBC();
             conexao.conectar();
 
-            String sql = "insert into cadastro(nome, dataa, situacao)values(?,?,?);";
+            String sql = "insert into produtos(nome, dataa, situacao)values(?,?,?);";
 
             PreparedStatement query = conexao.getConexao().prepareStatement(sql);
             query.setString(1, p.getNome());
@@ -78,8 +78,8 @@ public class ProdutoDAO {
 
             //Passar as informações do objeto para a consulta
             consulta.setString(1, p.getNome());
-            consulta.setString(3, p.getDataa());
-            consulta.setString(2, p.getSituacao());
+            consulta.setString(2, p.getDataa());
+            consulta.setString(3, p.getSituacao());
             consulta.setInt(4, p.getId());
 
             //Executar a instrução
@@ -99,7 +99,7 @@ public class ProdutoDAO {
             ConexaoJDBC conexao = new ConexaoJDBC();
             conexao.conectar();
 
-            String sql = "DELETE FROM cadastro WHERE id=?;";
+            String sql = "DELETE FROM produtos WHERE id=?;";
             PreparedStatement consulta = conexao.getConexao().prepareStatement(sql);
 
             consulta.setInt(1, id);
